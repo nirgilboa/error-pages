@@ -75,6 +75,7 @@ const defaultJSONFormat string = `{
     "service_name": {{ service_name | json }},
     "service_port": {{ service_port | json }},
     "request_id": {{ request_id | json }},
+    "traceparent": {{ traceparent | json }},
     "timestamp": {{ nowUnix }}
   }{{ end }}
 }
@@ -94,6 +95,7 @@ const defaultXMLFormat string = `<?xml version="1.0" encoding="utf-8"?>
     <serviceName>{{ service_name }}</serviceName>
     <servicePort>{{ service_port }}</servicePort>
     <requestID>{{ request_id }}</requestID>
+    <traceparent>{{ traceparent }}</traceparent>
     <timestamp>{{ nowUnix }}</timestamp>
   </details>{{ end }}
 </error>
@@ -110,6 +112,7 @@ Ingress Name: {{ ingress_name }}
 Service Name: {{ service_name }}
 Service Port: {{ service_port }}
 Request ID: {{ request_id }}
+Traceparent: {{ traceparent }}
 Timestamp: {{ nowUnix }}{{ end }}
 ` // an empty line at the end is important for better UX
 

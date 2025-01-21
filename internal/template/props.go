@@ -13,6 +13,7 @@ type Props struct {
 	ServiceName        string `token:"service_name"`  // (ingress-nginx) name of the Service backing the backend
 	ServicePort        string `token:"service_port"`  // (ingress-nginx) port number of the Service backing the backend
 	RequestID          string `token:"request_id"`    // (ingress-nginx) unique ID that identifies the request - same as for backend service
+	Traceparent				 string `token:"traceparent"`
 	ForwardedFor       string `token:"forwarded_for"` // the value of the `X-Forwarded-For` header
 	Host               string `token:"host"`          // the value of the `Host` header
 	ShowRequestDetails bool   `token:"show_details"`  // (config) show request details?
