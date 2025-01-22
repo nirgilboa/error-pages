@@ -50,7 +50,7 @@ func New(cfg *config.Config, log *logger.Logger) (_ fasthttp.RequestHandler, clo
 
 		// Print request headers to the console
 		reqHeaders.VisitAll(func(key, value []byte) {
-			log.Info(fmt.Sprintf("Header: %s = %s", key, value))
+		  write(ctx, log, fmt.Sprintf("Header: %s = %s", key, value))
 		})
 
 		if fromUrl, okUrl := extractCodeFromURL(string(ctx.Path())); okUrl {
