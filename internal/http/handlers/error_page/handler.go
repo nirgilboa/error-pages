@@ -121,7 +121,7 @@ func New(cfg *config.Config, log *logger.Logger) (_ fasthttp.RequestHandler, clo
 			tplProps.ServiceName = string(reqHeaders.Peek("X-Service-Name"))   // (ingress-nginx) name of the Service backing the backend
 			tplProps.ServicePort = string(reqHeaders.Peek("X-Service-Port"))   // (ingress-nginx) port number of the Service backing the backend
 			tplProps.RequestID = string(reqHeaders.Peek("X-Request-Id"))       // (ingress-nginx) unique ID that identifies the request - same as for backend service
-			tplProps.Traceparent = string(reqHeaders.Peek("Traceparent"))      // the value of the `Traceparent` header
+			tplProps.traceparent = string(reqHeaders.Peek("traceparent"))      // the value of the `traceparent` header
 			tplProps.ForwardedFor = string(reqHeaders.Peek("X-Forwarded-For")) // the value of the `X-Forwarded-For` header
 			tplProps.Host = string(reqHeaders.Peek("Host"))                    // the value of the `Host` header
 		}

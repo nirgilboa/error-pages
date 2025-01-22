@@ -112,7 +112,7 @@ Ingress Name: {{ ingress_name }}
 Service Name: {{ service_name }}
 Service Port: {{ service_port }}
 Request ID: {{ request_id }}
-Traceparent: {{ traceparent }}
+traceparent: {{ traceparent }}
 Timestamp: {{ nowUnix }}{{ end }}
 ` // an empty line at the end is important for better UX
 
@@ -141,7 +141,7 @@ var defaultCodes = Codes{ //nolint:gochecknoglobals
 }
 
 var defaultProxyHeaders = []string{ //nolint:gochecknoglobals
-	// "Traceparent",  // W3C Trace Context
+	// "traceparent",  // W3C Trace Context
 	// "Tracestate",   // W3C Trace Context
 	"X-Request-Id",    // unofficial HTTP header, used to trace individual HTTP requests
 	"X-Trace-Id",      // same as above
