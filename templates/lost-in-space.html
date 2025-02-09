@@ -430,20 +430,12 @@
       <li><span data-l10n>Host</span>: <code>{{ host }}</code></li>
       <!-- {{- end }}{{ if original_uri -}} -->
       <li><span data-l10n>Original URI</span>: <code>{{ original_uri }}</code></li>
-      <!-- {{- end }}{{ if forwarded_for -}} -->
-      <li><span data-l10n>Forwarded for</span>: <code>{{ forwarded_for }}</code></li>
       <!-- {{- end }}{{ if namespace -}} -->
       <li><span data-l10n>Namespace</span>: <code>{{ namespace }}</code></li>
-      <!-- {{- end }}{{ if ingress_name -}} -->
-      <li><span data-l10n>Ingress name</span>: <code>{{ ingress_name }}</code></li>
       <!-- {{- end }}{{ if service_name -}} -->
       <li><span data-l10n>Service name</span>: <code>{{ service_name }}</code></li>
-      <!-- {{- end }}{{ if service_port -}} -->
-      <li><span data-l10n>Service port</span>: <code>{{ service_port }}</code></li>
-      <!-- {{- end }}{{ if request_id -}} -->
-      <li><span data-l10n>Request ID</span>: <code>{{ request_id }}</code></li>
-      <!-- {{- end -}} -->
-      <li><span data-l10n>Timestamp</span>: <code>{{ nowUnix }}</code></li>
+      <!-- {{- end }} -->
+      <li><a href="https://lemonade.grafana.net/a/grafana-exploretraces-app/explore?primarySignal=full_traces&var-metric=rate&var-ds=grafanacloud-traces&var-groupBy=span.http.status_code&from=now-15m&to=now&timezone=browser&var-filters=nestedSetParent%7C%3C%7C0&var-filters=resource.service.name%7C%3D~%7Cingress.*&var-latencyThreshold=&var-partialLatencyThreshold=&actionView=breakdown&selection=%7B%22query%22:%22status%20%3D%20error%22,%22type%22:%22auto%22%7D">Trace this request</a></li>
     </ul>
     <!-- {{- end -}} -->
   </div>
