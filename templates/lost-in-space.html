@@ -98,12 +98,22 @@
       font-weight: bold;
     }
 
+    a, a:active, a:hover, a:visited {
+      color: #ff84c3;
+      display: block;
+      margin-top: 10px;
+    }
+
     /* {{ if show_details }} */
     .details {
       list-style: none;
       padding-left: 0;
       opacity: .7;
       font-size: 0.85em;
+    }
+
+    .details li {
+      margin: 3px 0;
     }
 
     .details li span {
@@ -435,8 +445,8 @@
       <!-- {{- end }}{{ if service_name -}} -->
       <li><span data-l10n>Service name</span>: <code>{{ service_name }}</code></li>
       <!-- {{- end }} -->
-      <li><a href="https://lemonade.grafana.net/a/grafana-exploretraces-app/explore?primarySignal=full_traces&var-metric=rate&var-ds=grafanacloud-traces&var-groupBy=span.http.status_code&from=now-15m&to=now&timezone=browser&var-filters=nestedSetParent%7C%3C%7C0&var-filters=resource.service.name%7C%3D~%7Cingress.*&var-latencyThreshold=&var-partialLatencyThreshold=&actionView=breakdown&selection=%7B%22query%22:%22status%20%3D%20error%22,%22type%22:%22auto%22%7D">Trace this request</a></li>
     </ul>
+    <p><a href="https://lemonade.grafana.net/a/grafana-exploretraces-app/explore?primarySignal=full_traces&var-metric=rate&var-ds=grafanacloud-traces&var-groupBy=resource.service.name&from=now-1h&to=now&timezone=browser&var-filters=nestedSetParent%7C%3C%7C0&var-filters=resource.service.name%7C%3D~%7Cingress.*&var-filters=span.http.target%7C%3D%7C{{ original_uri }}&var-filters=span.http.status_code%7C%3D%7C{{ code }}&var-latencyThreshold=&var-partialLatencyThreshold=&actionView=breakdown">Trace this request</a></p>
     <!-- {{- end -}} -->
   </div>
 </main>
