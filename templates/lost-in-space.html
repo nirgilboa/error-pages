@@ -446,7 +446,8 @@
       <li><span data-l10n>Service name</span>: <code>{{ service_name }}</code></li>
       <!-- {{- end }} -->
     </ul>
-    <p><a href="https://lemonade.grafana.net/a/grafana-exploretraces-app/explore?primarySignal=full_traces&var-metric=rate&var-ds=grafanacloud-traces&var-groupBy=resource.service.name&from=now-1h&to=now&timezone=browser&var-filters=nestedSetParent%7C%3C%7C0&var-filters=resource.service.name%7C%3D~%7Cingress.*&var-filters=span.http.target%7C%3D%7C{{ original_uri }}&var-filters=span.http.status_code%7C%3D%7C{{ code }}&var-latencyThreshold=&var-partialLatencyThreshold=&actionView=breakdown">Trace this request</a></p>
+    <p><a href="https://lemonade.grafana.net/a/grafana-exploretraces-app/explore?primarySignal=full_traces&var-metric=rate&var-ds=grafanacloud-traces&var-groupBy=resource.service.name&from=now-1h&to=now&timezone=browser&var-filters=nestedSetParent%7C%3C%7C0&var-filters=resource.service.name%7C%3D~%7Cingress.*&var-filters=span.http.target%7C%3D%7C{{ original_uri }}&var-latencyThreshold=&var-partialLatencyThreshold=&actionView=breakdown">Trace this request</a></p>
+
     <!-- {{- end -}} -->
   </div>
 </main>
